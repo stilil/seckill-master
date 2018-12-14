@@ -1,53 +1,4 @@
-## Java高并发秒杀系统API
-## How to play
 
- 1. git clone `https://github.com/codingXiaxw/seckill.git`
- 2. open IDEA -->  File  -->  New  --> Open 
- 3. choose seckill's pom.xml，open it
- 4. update the `jdbc.properties` files about your mysql's username and password
- 5. deploy the tomcat，and start up
- 6. enter in the browser: `http://localhost:8080/seckill/list`
- 7. enjoy it 
- 
-
-## Develop environment
-IDEA+Maven+SSM框架。  
-
-## Written in front of words
-
-之前写了一个用[SSM框架搭建的商品查询系统](http://codingxiaxw.cn/2016/11/15/45-smm%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/),分两篇文章分别记录了自己整合SSM框架的过程以及利用SSM开发的一些基础知识，由于那时候刚学完SSM框架，所以自己觉得整合的过程总结的不够好。<!--more-->如今在有了一定的SSM框架开发经验后针对慕课网上对秒杀系统的讲解视频再写一个用Maven+SSM做的一个秒杀系统的文字讲解，从头到尾记录自己整合SSM框架以及用SS框架M开发这个秒杀系统的过程。maven的强大之处就是你不用再像以前那样，如果在项目中用到spring框架还要到spring官网上去下载一系列的jar包，用了maven对项目进行管理之后你就可以直接在它的pom.xml文件中添加jar包的相应坐标，这样maven就能自动从它的中央仓库中为我们将这些jar包下载到其本地仓库中供我们使用。  
-
-用maven对项目进行管理的知识很简单，关于创建maven项目的知识大家看我的这篇文章便可以在几分钟内掌握:[Maven安装配置及创建你的第一个Maven项目](http://codingxiaxw.cn/2016/11/24/51-first-maven-project/)  
-
-秒杀系统搭建环境:IDEA+Maven+SSM框架。详情讲解[请点击这里](http://codingxiaxw.cn/2016/11/27/53-maven-ssm-seckill-dao/)或是下面模块的链接前往我的博客观看。  
-
-完成这个秒杀系统，需要完成四个模块的代码编写，分别是:  
-
-- 1.[Java高并发秒杀APi之业务分析与DAO层代码编写](http://codingxiaxw.cn/2016/11/27/53-maven-ssm-seckill-dao/)。
-- 2.[Java高并发秒杀APi之Service层代码编写](http://codingxiaxw.cn/2016/11/28/54-seckill-service/)。
-- 3.[Java高并发秒杀APi之Web层代码编写](http://codingxiaxw.cn/2016/11/28/55-seckill-web/)。
-
-其实完成这三个模块就可以完成我们的秒杀系统了，但对于我们的秒杀系统中一件秒杀商品，在秒杀的时候肯定会有成千上万的用户参与进来，通过上述三个模块完成的系统无法解决这么多用户的高并发操作，所以我们还需要第四个模块:  
-
-- 4.Java高并发秒杀APi之高并发优化(待更新)。
-
-该系统我将按照上述4个模块通过4篇文章来完成介绍，本篇文章进行第一个模块的讲解及项目的介绍以及Dao层编码的开发。首先看看我们项目的效果图:  
-
-列表页:  
-
-![](http://od2xrf8gr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-27%20%E4%B8%8B%E5%8D%883.24.50.png)  
-
-详情页:  
-
-![](http://od2xrf8gr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-27%20%E4%B8%8B%E5%8D%883.25.39.png)  
-
-![](http://od2xrf8gr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-27%20%E4%B8%8B%E5%8D%883.25.22.png)  
-
-![](http://od2xrf8gr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-27%20%E4%B8%8B%E5%8D%883.25.48.png)  
-
-![](http://od2xrf8gr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-27%20%E4%B8%8B%E5%8D%883.26.16.png)  
-
-接下来我将从如何用maven创建我们的秒杀系统seckill项目开始到完成我们的秒杀系统，详细介绍自己完成它的过程。  
 
 ## 1.相关技术介绍
 **MySQL:**1.这里我们采用手写代码创建相关表，掌握这种能力对我们以后的项目二次上线会有很大的帮助；2.SQL技巧；3.事务和行级锁的理解和一些应用。  
@@ -800,6 +751,6 @@ public class SuccessKilledDaoTest {
 
 运行，成功查询出我们明细表中id为1000且手机号码为13476191877的用户信息，并将表中对应的信息映射到SuccessKilled对象和Seckill对象的属性中。  
 
-到此，我们成功完成了Dao层开发及测试，接下来我们将进行Service层的开发工作，请查看我的下篇文章[Java高并发秒杀API之Service层开发](http://codingxiaxw.cn/2016/11/28/54-seckill-service/)  
+到此，我们成功完成了Dao层开发及测试，接下来我们将进行Service层的开发工作
 
 
